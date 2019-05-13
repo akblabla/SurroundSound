@@ -6,6 +6,6 @@ entity FilterInterpolator is
 	port(test : in std_logic);
 end entity FilterInterpolator;
 
-architecture default is
-
+architecture default of FilterInterpolator is
+begin
 end default;

@@ -6,6 +6,6 @@ entity SurroundSound is
 	port(test : in std_logic);
 end entity SurroundSound;
 
-architecture default is
-
+architecture default of SurroundSound is
+begin
 end default;
