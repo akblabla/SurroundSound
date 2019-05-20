@@ -8,5 +8,11 @@ entity FilterManager is
 		 direction : in  unsigned(8 downto 0);
 		 weight    : out signed32;
 		 filters   : out fir_filter_array(1 downto 0);
-		 delays    : out signed8_array(1 downto 0);
+		 delays    : out signed8_array(1 downto 0));
 end entity;
+
+architecture filtering of FilterManager is
+
+
+begin
+  
