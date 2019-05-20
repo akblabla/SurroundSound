@@ -1,5 +1,5 @@
 Flow report for SurroundSound
-Mon May 13 13:54:06 2019
+Wed May 15 11:09:20 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -40,10 +40,10 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Flow Status                 ; Flow Failed - Mon May 13 13:54:06 2019          ;
+; Flow Status                 ; Flow Failed - Wed May 15 11:09:20 2019          ;
 ; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name               ; SurroundSound                                   ;
-; Top-level Entity Name       ; SurroundSound                                   ;
+; Top-level Entity Name       ; SorroundSoundTb                                 ;
 ; Family                      ; Cyclone V                                       ;
 ; Device                      ; 5CSEMA5F31C6                                    ;
 ; Timing Models               ; Final                                           ;
@@ -62,50 +62,51 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/13/2019 13:53:41 ;
+; Start date & time ; 05/15/2019 11:08:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SurroundSound       ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 180331615333772.155774842108916        ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                            ;
++-------------------------------------+----------------------------------------+---------------+-----------------+------------+
+; Assignment Name                     ; Value                                  ; Default Value ; Entity Name     ; Section Id ;
++-------------------------------------+----------------------------------------+---------------+-----------------+------------+
+; COMPILER_SIGNATURE_ID               ; 180331615333772.155791133606628        ; --            ; --              ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --              ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --              ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; SorroundSoundTb ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; SorroundSoundTb ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; SorroundSoundTb ; Top        ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --              ; --         ;
+; TOP_LEVEL_ENTITY                    ; SorroundSoundTb                        ; SurroundSound ; --              ; --         ;
++-------------------------------------+----------------------------------------+---------------+-----------------+------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 4864 MB             ; 00:01:01                           ;
-; Total                ; 00:00:26     ; --                      ; --                  ; 00:01:01                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                          ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Elaboration ; 00:00:25     ; 1.0                     ; 4891 MB             ; 00:00:56                           ;
+; Total                  ; 00:00:25     ; --                      ; --                  ; 00:00:56                           ;
++------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                    ;
-+----------------------+------------------+------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-4VT7U9O  ; Windows 10 ; 10.0       ; x86_64         ;
-+----------------------+------------------+------------+------------+----------------+
++--------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                      ;
++------------------------+------------------+------------+------------+----------------+
+; Module Name            ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++------------------------+------------------+------------+------------+----------------+
+; Analysis & Elaboration ; DESKTOP-4VT7U9O  ; Windows 10 ; 10.0       ; x86_64         ;
++------------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off SurroundSound -c SurroundSound
+quartus_map --read_settings_files=on --write_settings_files=off SurroundSound -c SurroundSound --analysis_and_elaboration
 
 
 

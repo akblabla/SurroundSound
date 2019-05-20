@@ -8,7 +8,7 @@ entity FilterInterpolator is
 	port(clk : in std_logic;
 		reset : in std_logic;
 		inputFilters : in fir_filter_array(1 downto 0);
-		outputFilters : out fir_filter;
+		outputFilter : out fir_filter;
 		weights: in signed32_array(1 downto 0));
 end entity;
 
@@ -17,7 +17,7 @@ begin
 	interpolate: process(clk)
 	begin
 		for i in 0 to 255 loop
-			outputFilters(i)<= shift_right(inputFilters(0)(i)*weights(0)+inputFilters(1)(i)*weights(1),31);
+			outputFilter(i)<= resize(shift_right(inputFilters(0)(i)*weights(0)+inputFilters(1)(i)*weights(1),31),32);
 		end loop;
 	end process interpolate;
 
