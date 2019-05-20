@@ -16,13 +16,25 @@ end entity;
 architecture default of FilterInterpolator is
 begin
 	interpolate: process(clk)
+	variable output : signed32;
 	begin
 		for i in 0 to 255 loop
-			outputFilter(i)<= resize(
-				shift_right(
-					inputFilters(0)(i)*weights+inputFilters(1)(i)*(to_signed(2147483647,32)-weights)
-				,31)
-			,32);
+			output := to_signed(0,32);
+			if i>=delays(0) then
+				output:=resize(
+					shift_right(
+						inputFilters(0)(to_integer(to_signed(i,8)-delays(0)))*weights
+					,31)
+				,32);			
+			end if;
+			if i>=delays(1) then
+				output:=resize(
+					shift_right(
+						output+inputFilters(1)(to_integer(to_signed(i,8)-delays(1)))*(to_signed(2147483647,32)-weights)
+					,31)
+				,32);			
+			end if;
+			outputFilter(i)<=output;
 		end loop;
 	end process interpolate;
 
