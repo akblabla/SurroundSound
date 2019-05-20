@@ -8,7 +8,7 @@ entity FilterInterpolator is
 	port(clk : in std_logic;
 		reset : in std_logic;
 		inputFilters : in fir_filter_array(1 downto 0);
-		delays : in signed8_array(1 downto 0);
+		delays : in unsigned8_array(1 downto 0);
 		outputFilter : out fir_filter;
 		weights: in signed32);
 end entity;
@@ -23,14 +23,14 @@ begin
 			if i>=delays(0) then
 				output:=resize(
 					shift_right(
-						inputFilters(0)(to_integer(to_signed(i,8)-delays(0)))*weights
+						inputFilters(0)(to_integer(to_unsigned(i,8)-delays(0)))*weights
 					,31)
-				,32);			
+				,32);
 			end if;
 			if i>=delays(1) then
 				output:=resize(
 					shift_right(
-						output+inputFilters(1)(to_integer(to_signed(i,8)-delays(1)))*(to_signed(2147483647,32)-weights)
+						output+inputFilters(1)(to_integer(to_unsigned(i,8)-delays(1)))*(to_signed(-2147483648,32)-weights)
 					,31)
 				,32);			
 			end if;

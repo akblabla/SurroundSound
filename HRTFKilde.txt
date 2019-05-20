@@ -1,0 +1,4 @@
+https://steinhardt.nyu.edu/marl/research/head_related_impulse_responses_repository
+
+Interpolation
+https://www.ime.usp.br/~mqz/TwoApproachesForHRTFInterpolation.pdf
