@@ -1,7 +1,11 @@
-Analysis & Synthesis Status : Successful - Mon May 20 11:07:24 2019
+<<<<<<< HEAD
+Analysis & Synthesis Status : Successful - Wed May 15 11:12:03 2019
+=======
+Analysis & Elaboration Status : Failed - Wed May 15 11:09:20 2019
+>>>>>>> f68011707426c6d18ca6cf056fe76fcb64bea9df
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : SurroundSound
-Top-level Entity Name : SurroundSound
+Top-level Entity Name : SorroundSoundTb
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 0

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 Analysis & Synthesis report for SurroundSound
-Mon May 20 11:07:24 2019
+Wed May 15 11:12:03 2019
+=======
+Analysis & Elaboration report for SurroundSound
+Wed May 15 11:09:20 2019
+>>>>>>> f68011707426c6d18ca6cf056fe76fcb64bea9df
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -7,6 +12,7 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
+<<<<<<< HEAD
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
@@ -17,6 +23,12 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   9. Post-Synthesis Netlist Statistics for Top Partition
  10. Elapsed Time Per Partition
  11. Analysis & Synthesis Messages
+=======
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Analysis & Elaboration Settings
+  5. Analysis & Elaboration Messages
+>>>>>>> f68011707426c6d18ca6cf056fe76fcb64bea9df
 
 
 
@@ -39,10 +51,11 @@ refer to the applicable agreement for further details.
 
 
 
+<<<<<<< HEAD
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 20 11:07:24 2019           ;
+; Analysis & Synthesis Status     ; Successful - Wed May 15 11:12:03 2019           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; SurroundSound                                   ;
 ; Top-level Entity Name           ; SurroundSound                                   ;
@@ -60,15 +73,49 @@ refer to the applicable agreement for further details.
 ; Total PLLs                      ; 0                                               ;
 ; Total DLLs                      ; 0                                               ;
 +---------------------------------+-------------------------------------------------+
+=======
++---------------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                                  ;
++-------------------------------+-------------------------------------------------+
+; Analysis & Elaboration Status ; Failed - Wed May 15 11:09:20 2019               ;
+; Quartus Prime Version         ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
+; Revision Name                 ; SurroundSound                                   ;
+; Top-level Entity Name         ; SorroundSoundTb                                 ;
+; Family                        ; Cyclone V                                       ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                       ;
+; Total registers               ; N/A until Partition Merge                       ;
+; Total pins                    ; N/A until Partition Merge                       ;
+; Total virtual pins            ; N/A until Partition Merge                       ;
+; Total block memory bits       ; N/A until Partition Merge                       ;
+; Total PLLs                    ; N/A until Partition Merge                       ;
+; Total DLLs                    ; N/A until Partition Merge                       ;
++-------------------------------+-------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+>>>>>>> f68011707426c6d18ca6cf056fe76fcb64bea9df
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                             ;
+; Analysis & Elaboration Settings                                                                                           ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; SurroundSound      ; SurroundSound      ;
+; Top-level entity name                                                           ; SorroundSoundTb    ; SurroundSound      ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -149,13 +196,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
+<<<<<<< HEAD
 +------------------------------------------+
 ; Parallel Compilation                     ;
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -165,13 +213,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                      ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
-; SurroundSound.vhd                ; yes             ; User VHDL File  ; C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SurroundSound.vhd ;         ;
-+----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
+; SurroundSound.vhd                ; yes             ; User VHDL File  ; D:/DSPC git/SurroundSound/SurroundSound.vhd ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -250,11 +298,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
+=======
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+>>>>>>> f68011707426c6d18ca6cf056fe76fcb64bea9df
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Synthesis
+Info: Running Quartus Prime Analysis & Elaboration
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Mon May 20 11:06:59 2019
+<<<<<<< HEAD
+    Info: Processing started: Wed May 15 11:11:52 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SurroundSound -c SurroundSound
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file surroundsound.vhd
+    Info (12022): Found design unit 1: SurroundSound-default File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 9
+    Info (12023): Found entity 1: SurroundSound File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 5
+Info (12021): Found 1 design units, including 0 entities, in source file filtertypes.vhd
+    Info (12022): Found design unit 1: FilterTypes File: D:/DSPC git/SurroundSound/FilterTypes.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file filterinterpolator.vhd
+    Info (12022): Found design unit 1: FilterInterpolator-default File: D:/DSPC git/SurroundSound/FilterInterpolator.vhd Line: 15
+    Info (12023): Found entity 1: FilterInterpolator File: D:/DSPC git/SurroundSound/FilterInterpolator.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file buttoncontroller.vhd
+    Info (12022): Found design unit 1: ButtonController-controlDirection File: D:/DSPC git/SurroundSound/ButtonController.vhd Line: 15
+    Info (12023): Found entity 1: ButtonController File: D:/DSPC git/SurroundSound/ButtonController.vhd Line: 5
+Info (12127): Elaborating entity "SurroundSound" for the top level hierarchy
+Warning (12158): Entity "SurroundSound" contains only dangling pins
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "test" File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 6
+Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4881 megabytes
+    Info: Processing ended: Wed May 15 11:12:03 2019
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:27
+=======
+    Info: Processing started: Wed May 15 11:08:55 2019
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SurroundSound -c SurroundSound --analysis_and_elaboration
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file surroundsound.vhd
@@ -263,21 +347,20 @@ Info (12021): Found 2 design units, including 1 entities, in source file surroun
 Info (12021): Found 1 design units, including 0 entities, in source file filtertypes.vhd
     Info (12022): Found design unit 1: FilterTypes File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterTypes.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file filterinterpolator.vhd
-    Info (12022): Found design unit 1: FilterInterpolator-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterInterpolator.vhd Line: 16
+    Info (12022): Found design unit 1: FilterInterpolator-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterInterpolator.vhd Line: 15
     Info (12023): Found entity 1: FilterInterpolator File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterInterpolator.vhd Line: 7
-Info (12127): Elaborating entity "SurroundSound" for the top level hierarchy
-Warning (12158): Entity "SurroundSound" contains only dangling pins
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "test" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SurroundSound.vhd Line: 6
-Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4882 megabytes
-    Info: Processing ended: Mon May 20 11:07:24 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:57
+Info (12021): Found 2 design units, including 1 entities, in source file sorroundsoundtb.vhd
+    Info (12022): Found design unit 1: SorroundSoundTb-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SorroundSoundTb.vhd Line: 10
+    Info (12023): Found entity 1: SorroundSoundTb File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SorroundSoundTb.vhd Line: 7
+Info (12127): Elaborating entity "SorroundSoundTb" for the top level hierarchy
+Warning (10540): VHDL Signal Declaration warning at SorroundSoundTb.vhd(11): used explicit default value for signal "clk" because signal was never assigned a value File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SorroundSoundTb.vhd Line: 11
+Error (10533): VHDL Wait Statement error at SorroundSoundTb.vhd(26): Wait Statement must contain condition clause with UNTIL keyword File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SorroundSoundTb.vhd Line: 26
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Elaboration was unsuccessful. 2 errors, 2 warnings
+    Error: Peak virtual memory: 4891 megabytes
+    Error: Processing ended: Wed May 15 11:09:20 2019
+    Error: Elapsed time: 00:00:25
+    Error: Total CPU time (on all processors): 00:00:56
+>>>>>>> f68011707426c6d18ca6cf056fe76fcb64bea9df
 
 
