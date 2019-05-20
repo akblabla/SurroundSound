@@ -1,2 +1,5 @@
 /output_files/*
+/db/SurroundSound.db_info
+/db/SurroundSound.tmw_info
+/SurroundSound.qws
 /db/prev_cmp_SurroundSound.qmsg
