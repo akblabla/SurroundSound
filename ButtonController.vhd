@@ -9,7 +9,7 @@ entity ButtonController is
 		  SenseDown		: in  std_logic;
 		  clk				: in  std_logic;
 		  reset			: in  std_logic;
-		  direction		: out unsigned(8 downto 0));
+		  direction		: out unsigned(7 downto 0));
 end entity;
 
 architecture controlDirection of ButtonController is
@@ -18,7 +18,7 @@ architecture controlDirection of ButtonController is
   signal step			:	integer := 1;
 
 begin
-  direction <= degrees(21 downto 13);
+  direction <= degrees(21 downto 14);
   process(clk, reset)
   begin
     if reset = '0' then
