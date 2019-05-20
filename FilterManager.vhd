@@ -11,7 +11,6 @@ entity FilterManager is
 		 weight    : out signed32;
 		 filters   : out fir_filter_array(1 downto 0);
 		 delays    : out signed8_array(1 downto 0));
-<<<<<<< HEAD
 end entity;
 
 architecture filtering of FilterManager is
@@ -19,6 +18,5 @@ architecture filtering of FilterManager is
 
 begin
   
-=======
+
 end entity;
->>>>>>> de14092316be09b55fa2a8c97bcb61d6f7636f13
