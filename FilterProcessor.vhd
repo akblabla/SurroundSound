@@ -7,33 +7,26 @@ use work.FilterTypes.all;
 entity FilterProcessor is
 	port(clk : in std_logic;
 		reset : in std_logic;
-		inputFilter : in fir_filter_array;
+		inputFilter : in fir_filter;
 		input : in signed32;
 		output : out signed32);
 end entity;
 
 architecture default of FilterProcessor is
-signal delayLine : signed32_array(255 downto 0);
 begin
 	processData: process(clk)
 	variable outputTemp : signed32;
+	variable delayLine : signed32_array(255 downto 0);
 	begin
-		delayLine(i) <= input;
-		processData := to_signed(0,32);
-		processData:= resize(
-					shift_right(
-						inputFilter(0)*input
-					,31)
-				,32);
+		outputTemp := to_signed(0,32);
 		for i in 0 to 254 loop
-			delayLine(i+1) <= delayLine(i);
-			processData:=processData
-				+resize(
-					shift_right(
-						inputFilter(i+1)*delayLine(i)
-					,31)
-				,32);
+			delayLine(255-i) := delayLine(254-i);
 		end loop;
+		delayLine(0) := input;
+		for i in 0 to 255 loop
+			outputTemp:=outputTemp+inputFilter(i)*delayLine(i);
+		end loop;
+		output<=outputTemp;
 	end process processData;
 
 

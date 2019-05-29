@@ -1,4 +1,5 @@
-/output_files/*
+/output_files/
 /SurroundSound.qws
 /SurroundSound.qsf
-/db/*
+/db/
+/incremental_db/

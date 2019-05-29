@@ -1,9 +1,5 @@
 Analysis & Synthesis report for SurroundSound
-<<<<<<< HEAD
-Mon May 20 13:56:28 2019
-=======
-Mon May 20 13:53:12 2019
->>>>>>> dab546f03207b137be4f78d0297593672351541d
+Wed May 29 10:31:57 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -14,7 +10,13 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -37,11 +39,10 @@ refer to the applicable agreement for further details.
 
 
 
-<<<<<<< HEAD
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 20 13:56:28 2019           ;
+; Analysis & Synthesis Status     ; Successful - Wed May 29 10:31:57 2019           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; SurroundSound                                   ;
 ; Top-level Entity Name           ; SurroundSound                                   ;
@@ -59,24 +60,6 @@ refer to the applicable agreement for further details.
 ; Total PLLs                      ; 0                                               ;
 ; Total DLLs                      ; 0                                               ;
 +---------------------------------+-------------------------------------------------+
-=======
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Mon May 20 13:53:12 2019               ;
-; Quartus Prime Version       ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
-; Revision Name               ; SurroundSound                                   ;
-; Top-level Entity Name       ; SurroundSound                                   ;
-; Family                      ; Cyclone V                                       ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
-; Total registers             ; N/A until Partition Merge                       ;
-; Total pins                  ; N/A until Partition Merge                       ;
-; Total virtual pins          ; N/A until Partition Merge                       ;
-; Total block memory bits     ; N/A until Partition Merge                       ;
-; Total PLLs                  ; N/A until Partition Merge                       ;
-; Total DLLs                  ; N/A until Partition Merge                       ;
-+-----------------------------+-------------------------------------------------+
->>>>>>> dab546f03207b137be4f78d0297593672351541d
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -171,8 +154,8 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -182,14 +165,13 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-<<<<<<< HEAD
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; SurroundSound.vhd                ; yes             ; User VHDL File  ; D:/DSPC git/SurroundSound/SurroundSound.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; SurroundSound.vhd                ; yes             ; User VHDL File  ; C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SurroundSound.vhd ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -265,67 +247,51 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 
 
-=======
->>>>>>> dab546f03207b137be4f78d0297593672351541d
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-<<<<<<< HEAD
-    Info: Processing started: Mon May 20 13:56:19 2019
-=======
-    Info: Processing started: Mon May 20 13:52:46 2019
->>>>>>> dab546f03207b137be4f78d0297593672351541d
+    Info: Processing started: Wed May 29 10:31:21 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SurroundSound -c SurroundSound
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file surroundsound.vhd
-    Info (12022): Found design unit 1: SurroundSound-default File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 9
-    Info (12023): Found entity 1: SurroundSound File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 5
+    Info (12022): Found design unit 1: SurroundSound-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SurroundSound.vhd Line: 9
+    Info (12023): Found entity 1: SurroundSound File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SurroundSound.vhd Line: 5
 Info (12021): Found 1 design units, including 0 entities, in source file filtertypes.vhd
-<<<<<<< HEAD
-    Info (12022): Found design unit 1: FilterTypes File: D:/DSPC git/SurroundSound/FilterTypes.vhd Line: 5
-Info (12021): Found 2 design units, including 1 entities, in source file filtermanager.vhd
-    Info (12022): Found design unit 1: FilterManager-filtering File: D:/DSPC git/SurroundSound/FilterManager.vhd Line: 16
-    Info (12023): Found entity 1: FilterManager File: D:/DSPC git/SurroundSound/FilterManager.vhd Line: 7
-=======
     Info (12022): Found design unit 1: FilterTypes File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterTypes.vhd Line: 5
-Error (10500): VHDL syntax error at FilterManager.vhd(22) near text "entity";  expecting ";", or an identifier ("entity" is a reserved keyword), or "architecture" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterManager.vhd Line: 22
-Info (12021): Found 0 design units, including 0 entities, in source file filtermanager.vhd
->>>>>>> dab546f03207b137be4f78d0297593672351541d
+Info (12021): Found 2 design units, including 1 entities, in source file filtermanager.vhd
+    Info (12022): Found design unit 1: FilterManager-filtering File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterManager.vhd Line: 16
+    Info (12023): Found entity 1: FilterManager File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterManager.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file filterinterpolator.vhd
-    Info (12022): Found design unit 1: FilterInterpolator-default File: D:/DSPC git/SurroundSound/FilterInterpolator.vhd Line: 16
-    Info (12023): Found entity 1: FilterInterpolator File: D:/DSPC git/SurroundSound/FilterInterpolator.vhd Line: 7
+    Info (12022): Found design unit 1: FilterInterpolator-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterInterpolator.vhd Line: 16
+    Info (12023): Found entity 1: FilterInterpolator File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterInterpolator.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file buttoncontroller.vhd
-<<<<<<< HEAD
-    Info (12022): Found design unit 1: ButtonController-controlDirection File: D:/DSPC git/SurroundSound/ButtonController.vhd Line: 15
-    Info (12023): Found entity 1: ButtonController File: D:/DSPC git/SurroundSound/ButtonController.vhd Line: 5
-Info (12127): Elaborating entity "SurroundSound" for the top level hierarchy
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "test" File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 6
-Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4876 megabytes
-    Info: Processing ended: Mon May 20 13:56:28 2019
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:19
-=======
     Info (12022): Found design unit 1: ButtonController-controlDirection File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/ButtonController.vhd Line: 15
     Info (12023): Found entity 1: ButtonController File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/ButtonController.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file filterprocessor.vhd
     Info (12022): Found design unit 1: FilterProcessor-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterProcessor.vhd Line: 15
     Info (12023): Found entity 1: FilterProcessor File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/FilterProcessor.vhd Line: 7
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4860 megabytes
-    Error: Processing ended: Mon May 20 13:53:12 2019
-    Error: Elapsed time: 00:00:26
-    Error: Total CPU time (on all processors): 00:00:56
->>>>>>> dab546f03207b137be4f78d0297593672351541d
+Info (12021): Found 2 design units, including 1 entities, in source file iis2bytestream.vhd
+    Info (12022): Found design unit 1: IIS2ByteStream-stream File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/IIS2ByteStream.vhd Line: 17
+    Info (12023): Found entity 1: IIS2ByteStream File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/IIS2ByteStream.vhd Line: 7
+Info (12021): Found 2 design units, including 1 entities, in source file bytestream2iis.vhd
+    Info (12022): Found design unit 1: ByteStream2IIS-stream File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/ByteStream2IIS.vhd Line: 19
+    Info (12023): Found entity 1: ByteStream2IIS File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/ByteStream2IIS.vhd Line: 7
+Info (12127): Elaborating entity "SurroundSound" for the top level hierarchy
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "test" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SurroundSound/SurroundSound.vhd Line: 6
+Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 0 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4888 megabytes
+    Info: Processing ended: Wed May 29 10:31:57 2019
+    Info: Elapsed time: 00:00:36
+    Info: Total CPU time (on all processors): 00:01:15
 
 
