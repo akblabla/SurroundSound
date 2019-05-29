@@ -14,6 +14,28 @@ end entity;
 
 architecture default of FilterProcessor is
 begin
+<<<<<<< HEAD
+--	processData: process(clk)
+--	variable outputTemp : signed32;
+--	begin
+--		delayLine(0) <= input;
+--		processData := to_signed(0,32);
+--		processData:= resize(
+--								shift_right(
+--										inputFilter(0)*input
+--								,31)
+--							,32);
+--		for i in 0 to 254 loop
+--			delayLine(i+1) <= delayLine(i);
+--			processData:=processData
+--				+resize(
+--					shift_right(
+--						inputFilter(i+1)*delayLine(i)
+--					,31)
+--				,32);
+--		end loop;
+--	end process processData;
+=======
 	processData: process(clk)
 	variable outputTemp : signed32;
 	variable delayLine : signed32_array(255 downto 0);
@@ -28,6 +50,7 @@ begin
 		end loop;
 		output<=outputTemp;
 	end process processData;
+>>>>>>> 401fd8de7ed597c0175739b1719dbdd385e83676
 
 
 end architecture default;
