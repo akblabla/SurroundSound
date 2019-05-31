@@ -14,7 +14,6 @@ end entity;
 
 architecture default of FilterProcessor is
 begin
-<<<<<<< HEAD
 --	processData: process(clk)
 --	variable outputTemp : signed32;
 --	begin
@@ -35,7 +34,6 @@ begin
 --				,32);
 --		end loop;
 --	end process processData;
-=======
 	processData: process(clk)
 	variable outputTemp : signed32;
 	variable delayLine : signed32_array(255 downto 0);
@@ -50,7 +48,4 @@ begin
 		end loop;
 		output<=outputTemp;
 	end process processData;
->>>>>>> 401fd8de7ed597c0175739b1719dbdd385e83676
-
-
 end architecture default;

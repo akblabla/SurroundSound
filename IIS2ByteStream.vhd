@@ -5,35 +5,18 @@ library work;
 use work.FilterTypes.all;
 
 entity IIS2ByteStream is
-<<<<<<< HEAD
-  port(clk        : in  std_logic;
-       reset      : in  std_logic;
-		 IISdata    : in  signed32;
-=======
   port(reset      : in  std_logic;
-		 bitclk           : in  std_logic;
-		 adcdat           : in  std_logic;
-		 dacdat           : out std_logic                     := '0';
-		 adclrck          : in  std_logic;
-		 daclrck          : in  std_logic;
->>>>>>> 401fd8de7ed597c0175739b1719dbdd385e83676
+		 bitclk     : in  std_logic;
+		 adcdat     : in  std_logic;
+		 dacdat     : out std_logic := '0';
+		 adclrck    : in  std_logic;
+		 daclrck    : in  std_logic;
 		 byteStream : out signed32);
 end entity;
 
 architecture stream of IIS2ByteStream is
 
 begin
-<<<<<<< HEAD
-  process
-  begin
-    if reset = '0' then
-	   --Set IISdata 0
-		byteStream <= to_signed(0,32);
-	 elsif rising_edge(clk) then
-	   --Put data from IISdata to byteStream
-	 end if;
-  end process;
-=======
 	process
 	variable bitcount            : integer range 0 to 23         := 0;
 	variable st_source_data_temp : std_logic_vector(23 downto 0) := (others => '0');
@@ -61,5 +44,4 @@ begin
 --			ast_source_valid <= '1';
 		end if;
 	end process;
->>>>>>> 401fd8de7ed597c0175739b1719dbdd385e83676
 end stream;
