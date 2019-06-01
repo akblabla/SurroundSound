@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SurroundSound
-Fri May 31 14:58:44 2019
+Sat Jun 01 08:53:53 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -42,7 +42,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 31 14:58:44 2019           ;
+; Analysis & Synthesis Status     ; Successful - Sat Jun 01 08:53:53 2019           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; SurroundSound                                   ;
 ; Top-level Entity Name           ; SurroundSound                                   ;
@@ -253,7 +253,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Fri May 31 14:58:30 2019
+    Info: Processing started: Sat Jun 01 08:53:43 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SurroundSound -c SurroundSound
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -275,10 +275,10 @@ Info (12021): Found 2 design units, including 1 entities, in source file filterp
     Info (12022): Found design unit 1: FilterProcessor-default File: D:/DSPC git/SurroundSound/FilterProcessor.vhd Line: 15
     Info (12023): Found entity 1: FilterProcessor File: D:/DSPC git/SurroundSound/FilterProcessor.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file iis2bytestream.vhd
-    Info (12022): Found design unit 1: IIS2ByteStream-stream File: D:/DSPC git/SurroundSound/IIS2ByteStream.vhd Line: 17
-    Info (12023): Found entity 1: IIS2ByteStream File: D:/DSPC git/SurroundSound/IIS2ByteStream.vhd Line: 7
+    Info (12022): Found design unit 1: IIS2ByteStream-stream File: D:/DSPC git/SurroundSound/IIS2ByteStream.vhd Line: 19
+    Info (12023): Found entity 1: IIS2ByteStream File: D:/DSPC git/SurroundSound/IIS2ByteStream.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file bytestream2iis.vhd
-    Info (12022): Found design unit 1: ByteStream2IIS-stream File: D:/DSPC git/SurroundSound/ByteStream2IIS.vhd Line: 16
+    Info (12022): Found design unit 1: ByteStream2IIS-stream File: D:/DSPC git/SurroundSound/ByteStream2IIS.vhd Line: 20
     Info (12023): Found entity 1: ByteStream2IIS File: D:/DSPC git/SurroundSound/ByteStream2IIS.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file filtermemory.vhd
     Info (12022): Found design unit 1: FilterMemory-memery File: D:/DSPC git/SurroundSound/FilterMemory.vhd Line: 11
@@ -292,9 +292,9 @@ Info (21057): Implemented 1 device resources after synthesis - the final resourc
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 0 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4883 megabytes
-    Info: Processing ended: Fri May 31 14:58:44 2019
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Peak virtual memory: 4884 megabytes
+    Info: Processing ended: Sat Jun 01 08:53:53 2019
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
 
 

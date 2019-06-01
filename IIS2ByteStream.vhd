@@ -7,29 +7,19 @@ use work.FilterTypes.all;
 
 entity IIS2ByteStream is
   port(reset      : in  std_logic;
-<<<<<<< HEAD
+		 byteStreamLeft : out  signed32;
+       byteStreamRight : out  signed32;
 		 bitclk     : in  std_logic;
 		 adcdat     : in  std_logic;
 		 dacdat     : out std_logic := '0';
 		 adclrck    : in  std_logic;
-		 daclrck    : in  std_logic;
-		 byteStream : out signed32);
-=======
-		 bitclk           : in  std_logic;
-		 adcdat           : in  std_logic;
-		 adclrck          : in  std_logic;
-		 byteStreamLeft   : out signed32;
-		 byteStreamRight  : out signed32);
->>>>>>> 03360dea1fd9d54f9046ca70f709975574ae7ce8
+		 daclrck    : in  std_logic);
 end entity;
 
 architecture stream of IIS2ByteStream is
 
 begin
-<<<<<<< HEAD
-=======
 
->>>>>>> 03360dea1fd9d54f9046ca70f709975574ae7ce8
 	process
 	constant IISbitResolution : integer := 24;
 	variable adclrckPrev            : std_logic := '0';

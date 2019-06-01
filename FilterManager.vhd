@@ -56,7 +56,7 @@ begin
 			 filters(1)(i) <= signed(readings);
 		  end loop;
 		  counter := 0;
-		  while counter < flt * 256 loop
+		  while counter <= flt * 256 loop
 		    readline(fileID, lineRead);
 			 read(lineRead,readings);
 		    counter := counter + 1;
@@ -70,7 +70,7 @@ begin
 		  delays(1) <= filt_delays(0);
 		else
 		  counter := 0;
-		  while counter < flt * 256 loop
+		  while counter <= flt * 256 loop
 		    readline(fileID, lineRead);
 			 read(lineRead,readings);
 		    counter := counter + 1;

@@ -5,15 +5,13 @@ library work;
 use work.FilterTypes.all;
 
 entity ByteStream2IIS is
-<<<<<<< HEAD
-  port(reset      : in  std_logic;
-=======
+
+
   port(clk        : in  std_logic;
        reset      : in  std_logic;
        byteStreamLeft : in  signed32;
        byteStreamRight : in  signed32;
-		 
->>>>>>> 03360dea1fd9d54f9046ca70f709975574ae7ce8
+
        bitclk     : in  std_logic;
        dacdat     : out std_logic := '0';
        daclrck    : in  std_logic);
@@ -30,11 +28,11 @@ begin
   begin
     if reset = '0' then
 	   --Set IISdata 0
-<<<<<<< HEAD
+
 	elsif rising_edge(bitclk) then
 
 	   --Put data from IISdata to byteStream
-=======
+
 	elsif rising_edge(clk) then
 		if reset = '0' then
 			--Set IISdata 0
@@ -58,7 +56,6 @@ begin
 			end if;
 			daclrckPrev := daclrck;
 		end if;
->>>>>>> 03360dea1fd9d54f9046ca70f709975574ae7ce8
 	 end if;
   end process;
 end stream;
