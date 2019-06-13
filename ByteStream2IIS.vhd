@@ -7,14 +7,13 @@ use work.FilterTypes.all;
 entity ByteStream2IIS is
 
 
-  port(clk        : in  std_logic;
-       reset      : in  std_logic;
-       byteStreamLeft : in  signed32;
-       byteStreamRight : in  signed32;
-
-       bitclk     : in  std_logic;
-       dacdat     : out std_logic := '0';
-       daclrck    : in  std_logic);
+  port(clk        	: in  std_logic;
+       reset      	: in  std_logic;
+       byteStreamLeft 	: in  signed32;
+       byteStreamRight 	: in  signed32;
+       bitclk     	: in  std_logic;
+       dacdat     	: out std_logic := '0';
+       daclrck    	: in  std_logic);
 end entity;
 
 architecture stream of ByteStream2IIS is

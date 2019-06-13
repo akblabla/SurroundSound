@@ -30,7 +30,7 @@ begin
 			if i>=delays(1) then
 				output:=resize(
 					shift_right(
-						output+inputFilters(1)(to_integer(to_unsigned(i,8)-delays(1)))*(to_signed(2147483648,32)-weights)
+						output+inputFilters(1)(to_integer(to_unsigned(i,8)-delays(1)))*(to_signed(-2147483648,32)-weights)
 					,31)
 				,32);			
 			end if;

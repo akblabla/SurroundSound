@@ -5,11 +5,11 @@ library work;
 use work.FilterTypes.all;
 
 entity FilterProcessor is
-	port(clk : in std_logic;
-		reset : in std_logic;
-		inputFilter : in fir_filter;
-		input : in signed32;
-		output : out signed32);
+	port(clk 		: in std_logic;
+	     reset 		: in std_logic;
+	     inputFilter 	: in fir_filter;
+	     input 		: in signed32;
+	     output 		: out signed32);
 end entity;
 
 architecture default of FilterProcessor is
@@ -35,10 +35,10 @@ begin
 --		end loop;
 --	end process processData;
 	processData: process(clk)
-	variable outputTemp : signed32;
+	variable outputTemp : signed64;
 	variable delayLine : signed32_array(255 downto 0);
 	begin
-		outputTemp := to_signed(0,32);
+	  	outputTemp := to_signed(0,64);
 		for i in 0 to 254 loop
 			delayLine(255-i) := delayLine(254-i);
 		end loop;
@@ -46,6 +46,6 @@ begin
 		for i in 0 to 255 loop
 			outputTemp:=outputTemp+inputFilter(i)*delayLine(i);
 		end loop;
-		output<=outputTemp;
+		output<=outputTemp(63 downto 32);
 	end process processData;
 end architecture default;
