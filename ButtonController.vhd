@@ -9,49 +9,48 @@ entity ButtonController is
 	     SenseDown		: in  std_logic;
 	     clk		: in  std_logic;
 	     reset		: in  std_logic;
-	     direction		: out unsigned(7 downto 0));
+	     direction		: out unsigned(7 downto 0) := (others => '0'));
 end entity;
 
 architecture controlDirection of ButtonController is
-  signal degrees 		: 	unsigned(21 downto 0);
-  signal sensitivity 		:	unsigned(2 downto 0) := "001";
+  signal degrees 		: 	unsigned(21 downto 0) := (others => '0');
+  signal sensitivity 		:	integer := 1;
   signal step			:	integer := 1;
+  signal sense			:	integer := 1;
 
 begin
-  direction <= degrees(21 downto 14);
+  
   clocks: process(clk, reset)
   begin
+    direction <= degrees(21 downto 14);
+    sensitivity <= sense;
     if reset = '0' then
-	   direction <= (others => '0');
-		sensitivity <= "001";
-	 elsif rising_edge(clk) then
-	   if clkwBtn = '0' then
-	     degrees <= degrees + (sensitivity * step);
-	 	elsif cntclkwBtn = '0' then
-	 	  degrees <= degrees - (sensitivity * step);
-	 	end if;
-	 end if;
+      direction <= (others => '0');
+      sensitivity <= 1;
+      step <= 1;
+    elsif rising_edge(clk) then
+      if clkwBtn = '0' then
+        degrees <= degrees + (sensitivity * step);
+      elsif cntclkwBtn = '0' then
+        degrees <= degrees - (sensitivity * step);
+      end if;
+    end if;
   end process clocks;
   
-  process(SenseUp)
+  senses: process(SenseUp, SenseDown)
   begin
     if falling_edge(SenseUp) then
-	   if sensitivity = "101" then
-		  sensitivity <= "101";
-		else
-		  sensitivity <= sensitivity + "001";
-		end if;
-	 end if;
-  end process;
-  
-  process(SenseDown)
-  begin
-    if falling_edge(SenseUp) then
-	   if sensitivity = "001" then
-		  sensitivity <= "001";
-		else
-		  sensitivity <= sensitivity - "001";
-		end if;
-	 end if;
+      if sense = 5 then
+        
+      else
+        sense <= sense + 1;
+      end if;
+    elsif falling_edge(SenseDown) then
+      if sense = 1 then
+        
+      else
+        sense <= sense - 1;
+      end if;
+    end if;
   end process;
 end controlDirection;

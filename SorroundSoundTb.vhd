@@ -46,7 +46,7 @@ begin
 		wait for period;
 		delays(0) <= to_unsigned(50,8);
 		delays(1) <= to_unsigned(120,8);
-		wait for period
+		wait for period;
 		assert outputFilter(50)= to_signed(0,32)
 			report "Filters are not weighted proper"
 			severity FAILURE;

@@ -9,8 +9,8 @@ use ieee.std_logic_textio.all;
 entity FilterManager is
   port(clk       : in  std_logic;
        reset     : in  std_logic;
-       direction : in  unsigned(7 downto 0);
-       weight    : out unsigned32;
+       direction : in  unsigned(8 downto 0);
+       weight    : out unsigned(32 downto 0);
        filters   : out fir_filter_array(1 downto 0);
        delays    : out unsigned8_array(1 downto 0);
        mem_filt	 : in  fir_filter_array(23 downto 0));
@@ -23,15 +23,16 @@ begin
   
   process(clk, reset)
     variable flt        : integer;
-    variable wght 	: unsigned32;
-    variable dir32	: unsigned32;
-    variable dir_flt	: unsigned32;
+    variable wght 	: unsigned(32 downto 0);
+    variable dir32	: unsigned(32 downto 0);
+    variable dir_flt	: unsigned(32 downto 0);
     variable flt_ang	: unsigned32 := to_unsigned(178956971,32);
+    variable deg 	: unsigned32 := to_unsigned(2147483647,32);
     
 
   begin
     if reset = '0' then
-	   weight <= to_unsigned(0,32);
+	   weight <= to_unsigned(0,33);
 		for i in 0 to 255 loop
 		  filters(0)(i) <= to_signed(0,32);
 		  filters(1)(i) <= to_signed(0,32);
@@ -40,9 +41,9 @@ begin
 		delays(1) <= to_unsigned(0,8);
 	 elsif rising_edge(clk) then
 	   flt := to_integer((direction * 3)/32);
-		dir32(7 downto 0) := direction;
-		dir32 := shift_left(dir32,24);
-		wght := to_unsigned((2147483647*2*flt)/24,32); --The number is 32 bits
+		dir32(8 downto 0) := direction;
+		dir32 := shift_left(dir32,23);
+		wght := to_unsigned((2147483647/24)*2*flt,33); --The number is 32 bits
 		dir_flt := dir32 - wght;
 		weight <= (1-(dir_flt/flt_ang));
 		if flt = 23 then

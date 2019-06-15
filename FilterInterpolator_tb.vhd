@@ -13,22 +13,22 @@ architecture tb of FilterInterpolator_tb is
 
   component FilterInterpolator
     port(
-         clk 		: in std_logic;
-	 reset 		: in std_logic;
-	 inputFilters 	: in fir_filter_array(1 downto 0);
-	 delays 	: in unsigned8_array(1 downto 0);
-	 outputFilter 	: out fir_filter;
-	 weights	: in signed32);
+         clk 			: in std_logic;
+	 reset 			: in std_logic;
+	 inputFilters 		: in fir_filter_array(1 downto 0);
+	 delays 		: in unsigned8_array(1 downto 0);
+	 outputFilter 		: out fir_filter;
+	 weights		: in signed32);
   end component;
 
-  signal clk 		: std_logic := '0';
-  signal reset 		: std_logic := '0';
-  signal inputFilters 	: fir_filter_array(1 downto 0);
-  signal delays 	: unsigned8_array(1 downto 0);
-  signal outputFilter 	: fir_filter;
-  signal weights	: signed32 := (others => '0');
+  signal clk_tb 		: std_logic := '0';
+  signal reset_tb 		: std_logic := '0';
+  signal inputFilters_tb 	: fir_filter_array(1 downto 0);
+  signal delays_tb	 	: unsigned8_array(1 downto 0);
+  signal outputFilter_tb 	: fir_filter;
+  signal weights_tb		: signed32 := (others => '0');
 
-  signal clock 		: std_logic := '1';
+  signal clock 			: std_logic := '1';
 
   
 
@@ -38,27 +38,32 @@ begin
 
   DUT: FilterInterpolator
     port map(
-      clk 		=> clk,
-      reset 		=> reset,
-      inputFilters 	=> inputFilters,
-      delays 		=> delays,
-      outputFilter 	=> outputFilter,
-      weights 		=> weights);
+      clk 		=> clk_tb,
+      reset 		=> reset_tb,
+      inputFilters 	=> inputFilters_tb,
+      delays 		=> delays_tb,
+      outputFilter 	=> outputFilter_tb,
+      weights 		=> weights_tb);
 
   clock <= not clock after 10 ns;
-  clk <= clock;
-  reset <= '0', '1' after 5 ns;
+  clk_tb <= clock;
+  reset_tb <= '0', '1' after 5 ns;
 
   prosessed: process
   begin
     
 
-    weights <= to_signed(73737,32);
-    delays(0) <= to_unsigned(0,8);
-    delays(1) <= to_unsigned(0,8);
+    weights_tb <= to_signed(0,32);
+    delays_Tb(0) <= to_unsigned(0,8);
+    delays_tb(1) <= to_unsigned(0,8);
     for i in 0 to 255 loop
-      inputFilters(0)(i) <= to_signed(i,32);
-      inputFilters(1)(i) <= to_signed(255-i,32);
+      inputFilters_tb(0)(i) <= to_signed(i,32);
+      inputFilters_tb(1)(i) <= to_signed(255-i,32);
+    end loop;
+    wait for 10 ns;
+    for i in 0 to 255 loop
+      inputFilters_tb(0)(i) <= to_signed(i+1,32);
+      inputFilters_tb(1)(i) <= to_signed(i*2,32);
     end loop;
 
     wait;

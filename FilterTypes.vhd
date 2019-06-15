@@ -10,6 +10,7 @@ package FilterTypes is
      subtype signed32 is signed(31 downto 0);
      subtype unsigned32 is unsigned(31 downto 0);
      subtype signed64 is signed(63 downto 0);
+     subtype unsigned64 is unsigned(63 downto 0);
      type signed_array is array(natural range <>) of signed32;
      subtype fir_filter is signed_array(255 downto 0);
      type signed8_array is array(natural range <>) of signed8;
