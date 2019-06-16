@@ -28,7 +28,8 @@ end component;
   signal dacdat_tb     		: std_logic := '0';
   signal daclrck_tb    		: std_logic := '0';
 
-  signal clock 		: std_logic := '1';
+  signal clock 			: std_logic := '1';
+  signal dacclk			: std_logic := '1';
 
 begin
   DUT: ByteStream2IIS
@@ -42,15 +43,22 @@ begin
       daclrck 		=> daclrck_tb);
 
   clock <= not clock after 10 ns;
+  dacclk <= not dacclk after 500 ns;
   clk_tb <= clock;
+  bitclk_tb <= clock;
+  daclrck_tb <= dacclk;
   reset_tb <= '0', '1' after 5 ns;
 
   proc: process
   begin
+    byteStreamLeft_tb <= to_signed(324,32);
+    byteStreamRight_tb <= to_signed(2345,32);
+    wait for 750 ns;
+    byteStreamLeft_tb <= to_signed(42232,32);
+    byteStreamRight_tb <= to_signed(60000,32);
     
 
-
-
+    wait;
   end process proc;
 end tb;
 

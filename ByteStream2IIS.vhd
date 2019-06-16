@@ -17,19 +17,30 @@ entity ByteStream2IIS is
 end entity;
 
 architecture stream of ByteStream2IIS is
-constant IISbitResolution 	: integer := 24;
-signal start            	: std_logic := '0';
+constant IISbitResolution 	: integer 					:= 24;
+signal start            	: std_logic 					:= '0';
+signal starting			: std_logic					:= '0';
 signal dest_data_temp 		: std_logic_vector(IISbitResolution-1 downto 0) := (others => '0');
+  
 	
 begin
-  process (daclrck)
+  process (clk)
+  variable daclrckPrev      	: std_logic 					:= '0';
   begin
-    if rising_edge(daclrck) then
-      dest_data_temp <= std_logic_vector(byteStreamLeft(31 downto 31-IISbitResolution));
-    elsif falling_edge(daclrck) then
-      dest_data_temp <= std_logic_vector(byteStreamRight(31 downto 31-IISbitResolution));				
+
+    if rising_edge(clk) then
+      if daclrck = not daclrckPrev then
+        if daclrck = '0' then
+      	  dest_data_temp <= std_logic_vector(byteStreamLeft(31 downto 31-IISbitResolution+1));
+	else
+      	  dest_data_temp <= std_logic_vector(byteStreamRight(31 downto 31-IISbitResolution+1));	
+ 	end if;
+        daclrckPrev := daclrck;
+        start <= '1';
+      elsif starting = '1' then
+        start <= '0';
+      end if;	
     end if;
-  start <= '1';
   end process;
 
 
@@ -40,9 +51,11 @@ begin
       dacdat <= '0';
     elsif rising_edge(bitclk) then
       if start = '1' then
-	start <= '0';
+        bitcount := 0;
+	starting <= '1';
       elsif bitcount<IISbitResolution then
-	if daclrck = '0' then
+	starting <= '0';
+        if daclrck = '0' then
 	  dacdat <= dest_data_temp(bitcount);
 	else
 	  dacdat <= dest_data_temp(bitcount);

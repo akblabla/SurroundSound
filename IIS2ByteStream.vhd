@@ -25,7 +25,7 @@ begin
   variable adclrckPrev      : std_logic 					:= '0';
   variable bitcount         : integer range 0 to IISbitResolution         	:= 0;
   variable source_data_temp : std_logic_vector(IISbitResolution-1 downto 0) 	:= (others => '0');
-  variable signed_data_temp : signed(IISbitResolution-1 downto 0)		:= to_signed(0,IISbitResolution);
+
   begin
     if reset = '0' then
       byteStreamLeft <= to_signed(0,32);
@@ -34,8 +34,7 @@ begin
       if adclrckPrev = not adclrck then
 	bitcount := 0;
 	if adclrck = '0' then
-          signed_data_temp := signed(source_data_temp);
-	  byteStreamLeft <= resize(signed_data_temp,32);
+	  byteStreamLeft <= resize(signed(source_data_temp),32);
 	else
 	  byteStreamRight <= resize(signed(source_data_temp),32);				
 	end if;
@@ -43,20 +42,7 @@ begin
         source_data_temp(bitcount) := adcdat;
 	bitcount := bitcount+1;
       end if;
-      adclrckPrev := adclrck;
-			
+      adclrckPrev := adclrck;			
     end if;	
---		end if;
---			wait until adclrck = '0';
---			wait for bitperiod;
---			wait until bitclk = '1';
---			for bitcount in 23 downto 0 loop    --shift register
---			  st_source_data_temp(bitcount) := adcdat;
---			  wait for bitperiod;
---			end loop;
---			wait until adclrck = '1';
---			ast_source_valid <= '0';
---			ast_source_data  <= st_source_data_temp;
---			ast_source_valid <= '1';
   end process;
 end stream;
