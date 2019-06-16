@@ -7,6 +7,8 @@ package FilterTypes is
 
      subtype signed8 is signed(7 downto 0);
      subtype unsigned8 is unsigned(7 downto 0);
+     subtype signed16 is signed(15 downto 0);
+     subtype unsigned16 is unsigned(15 downto 0);
      subtype signed32 is signed(31 downto 0);
      subtype unsigned32 is unsigned(31 downto 0);
      subtype signed64 is signed(63 downto 0);

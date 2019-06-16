@@ -6,11 +6,11 @@ use work.FilterTypes.all;
 
 entity FilterInterpolator is
 	port(clk 		: in std_logic;
-		reset 		: in std_logic;
-		inputFilters 	: in fir_filter_array(1 downto 0);
-		delays 		: in unsigned8_array(1 downto 0);
-		outputFilter 	: out fir_filter;
-		weights		: in signed32);
+	     reset 		: in std_logic;
+	     inputFilters 	: in fir_filter_array(1 downto 0);
+	     delays 		: in unsigned8_array(1 downto 0);
+	     outputFilter 	: out fir_filter;
+	     weights		: in signed32);
 end entity;
 
 architecture default of FilterInterpolator is

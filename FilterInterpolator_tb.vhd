@@ -54,7 +54,7 @@ begin
     
 
     weights_tb <= to_signed(0,32);
-    delays_Tb(0) <= to_unsigned(0,8);
+    delays_tb(0) <= to_unsigned(0,8);
     delays_tb(1) <= to_unsigned(0,8);
     for i in 0 to 255 loop
       inputFilters_tb(0)(i) <= to_signed(i,32);

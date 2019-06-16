@@ -45,14 +45,29 @@ begin
 
   clock <= not clock after 10 ns;
   bitclk_tb <= clock;
+--  adclrck_tb <= clock;
   reset_tb <= '0', '1' after 5 ns;
 
   proc: process
   begin
-    
-
-
-
+    adcdat_tb <= '1';
+    wait for 25 ns;
+    adcdat_tb <= '0';
+    wait for 20 ns;
+    adcdat_tb <= '1';
+    wait for 40 ns;
+    adcdat_tb <= '0';
+    adclrck_tb <= not adclrck_tb;
+    wait for 20 ns;
+    adclrck_tb <= not adclrck_tb;
+    wait for 20 ns;
+    assert byteStreamRight_tb = to_signed(13,32)
+      report "Right stream wrong"
+      severity warning;
+    assert byteStreamLeft_tb = to_signed(13,32)
+      report "Left stream wrong stream wrong"
+      severity warning;
+    wait;
   end process proc;
 end tb;
 

@@ -13,8 +13,8 @@ architecture tb of FilterManager_tb is
     port(
       clk       	: in  std_logic;
       reset     	: in  std_logic;
-      direction 	: in  unsigned(8 downto 0);
-      weight    	: out unsigned(32 downto 0);
+      direction 	: in  unsigned8;
+      weight    	: out unsigned32;
       filters   	: out fir_filter_array(1 downto 0);
       delays    	: out unsigned8_array(1 downto 0);
       mem_filt	 	: in  fir_filter_array(23 downto 0));
@@ -26,8 +26,8 @@ architecture tb of FilterManager_tb is
 
   signal clk_tb 	: std_logic := '0';
   signal reset_tb     	: std_logic := '0';
-  signal direction_tb 	: unsigned(8 downto 0) := (others => '0');
-  signal weight_tb    	: unsigned(32 downto 0) := (others => '0');
+  signal direction_tb 	: unsigned8 := (others => '0');
+  signal weight_tb    	: unsigned32 := (others => '0');
   signal filters_tb   	: fir_filter_array(1 downto 0);
   signal delays_tb    	: unsigned8_array(1 downto 0);
   signal mem_filt_tb	: fir_filter_array(23 downto 0);
@@ -56,23 +56,25 @@ begin
 
   filt_proc: process
   begin
-    direction_tb <= to_unsigned(1,9);
-    wait for 15 ns;
-    direction_tb <= to_unsigned(2,9);
+    direction_tb <= to_unsigned(1,8);
+    wait for 25 ns;
+    direction_tb <= to_unsigned(2,8);
     wait for 20 ns;
-    direction_tb <= to_unsigned(4,9);
+    direction_tb <= to_unsigned(4,8);
     wait for 20 ns;
-    direction_tb <= to_unsigned(8,9);
+    direction_tb <= to_unsigned(8,8);
     wait for 20 ns;
-    direction_tb <= to_unsigned(16,9);
+    direction_tb <= to_unsigned(16,8);
     wait for 20 ns;
-    direction_tb <= to_unsigned(32,9);
+    direction_tb <= to_unsigned(32,8);
     wait for 20 ns;
-    direction_tb <= to_unsigned(64,9);
+    direction_tb <= to_unsigned(64,8);
     wait for 20 ns;
-    direction_tb <= to_unsigned(127,9);
+    direction_tb <= to_unsigned(127,8);
     wait for 20 ns;
-    direction_tb <= to_unsigned(200,9);
+    direction_tb <= to_unsigned(200,8);
+    wait for 20 ns;
+    direction_tb <= to_unsigned(255,8);
     
     wait;
   end process filt_proc;
