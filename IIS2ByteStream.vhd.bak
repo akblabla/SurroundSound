@@ -35,7 +35,7 @@ begin
       if adclrckPrev = not adclrck then
 	bitcount := 0;
 	if adclrck = '0' then
-          signed_data_temp := to_signed(source_data_temp,32);
+          signed_data_temp := signed(source_data_temp);
 	  byteStreamLeft <= resize(signed_data_temp,32);
 	else
 	  byteStreamRight <= resize(signed(source_data_temp),32);				
