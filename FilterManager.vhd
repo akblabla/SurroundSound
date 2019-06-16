@@ -23,7 +23,6 @@ begin
   
   process(clk, reset)
     variable flt        : integer := 0;
-    variable wght 	: unsigned32 := (others => '0');
     variable dir32	: unsigned32 := (others => '0');
     variable dir_flt	: unsigned32 := (others => '0');
     variable flt_ang	: unsigned32 := to_unsigned(178956970,32);
@@ -41,11 +40,8 @@ begin
 	 elsif rising_edge(clk) then
 	   flt := to_integer((direction * 3)/32);
 		dir32(7 downto 0) := direction;
-		dir32 := shift_left(dir32,23);
-		wght := to_unsigned((2147483647/24)*flt,32);
-                wght := resize(wght * 2,32);
-		dir_flt := dir32 - wght;
-                weight <= (1-(dir_flt/flt_ang));
+		dir32 := shift_left(dir32,24);
+		weight <= to_unsigned((to_integer(dir32) rem 178956971)*24,32);
 		if flt = 23 then
 		  filters(0) <= mem_filt(23);
 		  filters(1) <= mem_filt(0);
