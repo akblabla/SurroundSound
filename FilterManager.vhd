@@ -41,7 +41,7 @@ begin
 	 elsif rising_edge(clk) then
 	   flt := to_integer((direction * 3)/32);
 		dir32(7 downto 0) := direction;
-		dir32 := shift_left(dir32,23);
+		dir32 := shift_left(dir32,24);
 		wght := to_unsigned((2147483647/24)*flt,32);
                 wght := resize(wght * 2,32);
 		dir_flt := dir32 - wght;
