@@ -28,7 +28,6 @@ begin
   variable signed_data_temp : signed(IISbitResolution-1 downto 0)		:= to_signed(0,IISbitResolution);
   begin
     if reset = '0' then
-      --Set IISdata 0 
       byteStreamLeft <= to_signed(0,32);
       byteStreamRight <= to_signed(0,32);
     elsif rising_edge(bitclk) then
