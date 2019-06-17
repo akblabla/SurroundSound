@@ -18,7 +18,7 @@ architecture tb of FilterInterpolator_tb is
 	 inputFilters 		: in fir_filter_array(1 downto 0);
 	 delays 		: in unsigned8_array(1 downto 0);
 	 outputFilter 		: out fir_filter;
-	 weights		: in signed32);
+	 weights		: in unsigned32);
   end component;
 
   signal clk_tb 		: std_logic := '0';
@@ -26,7 +26,7 @@ architecture tb of FilterInterpolator_tb is
   signal inputFilters_tb 	: fir_filter_array(1 downto 0);
   signal delays_tb	 	: unsigned8_array(1 downto 0);
   signal outputFilter_tb 	: fir_filter;
-  signal weights_tb		: signed32 := (others => '0');
+  signal weights_tb		: unsigned32 := (others => '0');
 
   signal clock 			: std_logic := '1';
 
@@ -53,14 +53,14 @@ begin
   begin
     
 
-    weights_tb <= to_signed(0,32);
+    weights_tb <= to_unsigned(0,32);
     delays_tb(0) <= to_unsigned(0,8);
     delays_tb(1) <= to_unsigned(0,8);
     for i in 0 to 255 loop
       inputFilters_tb(0)(i) <= to_signed(i,32);
       inputFilters_tb(1)(i) <= to_signed(255-i,32);
     end loop;
-    wait for 10 ns;
+    wait for 40 ns;
     for i in 0 to 255 loop
       inputFilters_tb(0)(i) <= to_signed(i+1,32);
       inputFilters_tb(1)(i) <= to_signed(i*2,32);

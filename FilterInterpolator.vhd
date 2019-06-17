@@ -10,7 +10,7 @@ entity FilterInterpolator is
 	     inputFilters 	: in fir_filter_array(1 downto 0);
 	     delays 		: in unsigned8_array(1 downto 0);
 	     outputFilter 	: out fir_filter;
-	     weights		: in signed32);
+	     weights		: in unsigned32);
 end entity;
 
 architecture default of FilterInterpolator is
@@ -30,7 +30,7 @@ begin
       if (i >= delays(1)) then
 	output:=resize(
 		      shift_right(
-				 output+inputFilters(1)(to_integer(to_unsigned(i,8)-delays(1)))*(to_signed(-2147483648,32)-weights)
+				 output+inputFilters(1)(to_integer(to_unsigned(i,8)-delays(1)))*(to_unsigned(2147483647,32)-weights)
 		      ,31)
 	,32);			
       end if;
