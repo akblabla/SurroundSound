@@ -17,10 +17,10 @@ architecture tb of FilterProcessor_tb is
       output 		: out signed32);
   end component;
 
-  signal clk_tb		: std_logic;
-  signal reset_tb	: std_logic;
+  signal clk_tb		: std_logic := '0';
+  signal reset_tb	: std_logic := '0';
   signal inputFilter_tb	: fir_filter;
-  signal input_tb	: signed32;
+  signal input_tb	: signed32 := (others => '0');
   signal output_tb	: signed32;
 
   signal Clock 		: std_logic := '1';
@@ -39,7 +39,26 @@ begin
   clk_tb <= Clock;
   reset_tb <= '0', '1' after 5 ns;
 
-
+  procced: process
+  begin
+    for i in 0 to 255 loop
+      inputFilter_tb(i) <= to_signed(i+1,32);
+    end loop;
+    input_tb <= to_signed(1,32);
+    wait for 25 ns;
+    input_tb <= to_signed(2,32);
+    wait for 25 ns;
+    input_tb <= to_signed(3,32);
+    wait for 25 ns;
+    input_tb <= to_signed(5,32);
+    wait for 25 ns;
+    input_tb <= to_signed(8,32);
+    wait for 25 ns;
+    input_tb <= to_signed(10,32);
+    wait for 25 ns;
+    input_tb <= to_signed(0,32);
+  wait;
+  end process;
 end tb;
 
 

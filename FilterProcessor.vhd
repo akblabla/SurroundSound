@@ -9,7 +9,7 @@ entity FilterProcessor is
 	     reset 		: in std_logic;
 	     inputFilter 	: in fir_filter;
 	     input 		: in signed32;
-	     output 		: out signed32);
+	     output 		: out signed32 := to_signed(0,32));
 end entity;
 
 architecture default of FilterProcessor is
@@ -35,17 +35,23 @@ begin
 --		end loop;
 --	end process processData;
 	processData: process(clk)
-	variable outputTemp : signed64;
-	variable delayLine : signed32_array(255 downto 0);
+	variable outputTemp : signed64 := to_signed(0,64);
+	variable delayLine : signed32_array(255 downto 0) := (others => to_signed(0,32));
 	begin
-	  	outputTemp := to_signed(0,64);
-		for i in 0 to 254 loop
+		if reset = '0' then
+			outputTemp := to_signed(0,64);
+			delayLine := (others => to_signed(0,32));
+			output <= to_signed(0,32);
+		elsif rising_edge(clk) then
+	  		outputTemp := to_signed(0,64);
+			for i in 0 to 254 loop
 			delayLine(255-i) := delayLine(254-i);
-		end loop;
-		delayLine(0) := input;
-		for i in 0 to 255 loop
-			outputTemp:=outputTemp+inputFilter(i)*delayLine(i);
-		end loop;
-		output<=outputTemp(63 downto 32);
+			end loop;
+			delayLine(0) := input;
+			for i in 0 to 255 loop
+				outputTemp:=outputTemp+inputFilter(i)*delayLine(i);
+			end loop;
+			output<=outputTemp(31 downto 0);
+		end if;
 	end process processData;
 end architecture default;
