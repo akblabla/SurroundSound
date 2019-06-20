@@ -1,5 +1,6 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
+library IEEE;
 use IEEE.numeric_std.all;
 library work;
 use work.FilterTypes.all;
@@ -16,25 +17,25 @@ end entity;
 architecture default of FilterInterpolator is
 begin
   interpolate: process(clk)
-  variable output : signed32;
+  variable outputFilterTemp : signed32;
   begin
     for i in 0 to 255 loop
-      output := to_signed(0,32);
+      outputFilterTemp := to_signed(0,32);
       if (i >= delays(0)) then
-        output:=resize(
+        outputFilterTemp:=resize(
                       shift_right(
-				inputFilters(0)(to_integer(to_unsigned(i,8)-delays(0)))*weights
-                      ,31)
+				inputFilters(0)(to_integer(to_unsigned(i,8)-delays(0)))*("0xFFFFFFFF"-to_signed(to_integer(weights),33))
+                      ,32)
         ,32);
       end if;
       if (i >= delays(1)) then
-	output:=resize(
+	outputFilterTemp:=resize(
 		      shift_right(
-				 output+inputFilters(1)(to_integer(to_unsigned(i,8)-delays(1)))*(to_unsigned(2147483647,32)-weights)
-		      ,31)
+				 outputFilterTemp+inputFilters(1)(to_integer(to_unsigned(i,8)-delays(1)))*to_signed(to_integer(weights),33)
+                      ,32)
 	,32);			
       end if;
-      outputFilter(i)<=output;
+      outputFilter(i)<=outputFilterTemp;
     end loop;
   end process interpolate;
 

@@ -48,31 +48,31 @@ begin
 
   ButtonGen: process 
   begin
-    wait for 20 ns;
+    wait for 200 us;
     for i in 0 to 3 loop
       SenseUp_tb <= '1';
-      wait for 1 ns;
+	  wait for 200 us;
       SenseUp_tb <= '0';
-      wait for 1 ns;
+	  wait for 200 us;
     end loop;
     clkwBtn_tb <= '0';
-    wait for 66000 ns;
+    wait for 100 us;
     assert direction_tb = to_unsigned(1,8)
       report "Wrong direction - 1"
       severity warning;
-    wait for 65540 ns;
+    wait for 100 us;
     assert direction_tb = "00000010"
       report "Wrong direction - 2"
       severity warning;
-    wait for 65540 ns;
+    wait for 100 us;
     assert direction_tb = "00000011"
       report "Wrong direction - 3"
       severity warning;
-    wait for 65540 ns;
+    wait for 100 us;
     assert direction_tb = "00000100"
       report "Wrong direction - 4"
       severity warning;
-    wait for 65540 ns;
+    wait for 50 us;
     assert direction_tb = "00000101"
       report "Wrong direction - 5"
       severity warning;

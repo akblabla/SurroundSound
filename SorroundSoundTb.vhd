@@ -13,7 +13,7 @@ constant period : time := 20.83 us;
 signal inputFilters : fir_filter_array(1 downto 0);
 signal delays : unsigned8_array(1 downto 0);
 signal outputFilter : fir_filter;
-signal weights: signed32;
+signal weights: unsigned32;
 begin
 	FI : entity work.FilterInterpolator port map(
 		clk=>clk,
@@ -35,7 +35,7 @@ begin
 			inputFilters(0)(i)<=to_signed(i*10,32);
 			inputFilters(1)(i)<=to_signed(1000-i*i,32);
 		end loop;
-		weights<=to_signed(1073741824,32);
+		weights<=to_unsigned(1073741824,32);
 		delays(0) <= to_unsigned(0,8);
 		delays(1) <= to_unsigned(0,8);
 

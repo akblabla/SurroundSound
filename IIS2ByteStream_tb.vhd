@@ -39,7 +39,9 @@ begin
       byteStreamRight 	=> byteStreamRight_tb,
       bitclk 		=> bitclk_tb,
       adcdat 		=> adcdat_tb,
-      adclrck 		=> adclrck_tb);
+      dacdat            => dacdat_tb,
+      adclrck 		=> adclrck_tb,
+      daclrck           => daclrck_tb);
 
   clock <= not clock after 10 ns;
   bitclk_tb <= clock;

@@ -3,13 +3,13 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
 entity ButtonController is
-	port(clkwBtn 		: in  std_logic;
-	     cntclkwBtn		: in  std_logic;
-	     SenseUp		: in  std_logic;
-	     SenseDown		: in  std_logic;
-	     clk		: in  std_logic;
-	     reset		: in  std_logic;
-	     direction		: out unsigned(7 downto 0) := (others => '0'));
+		port(clkwBtn 		: in  std_logic;
+			  cntclkwBtn		: in  std_logic;
+			  SenseUp		: in  std_logic;
+			  SenseDown		: in  std_logic;
+			  clk		: in  std_logic;
+			  reset		: in  std_logic;
+			  direction		: out unsigned(7 downto 0) := (others => '0'));
 end entity;
 
 architecture controlDirection of ButtonController is
@@ -36,21 +36,52 @@ begin
       end if;
     end if;
   end process clocks;
-  
-  senses: process(SenseUp, SenseDown)
+
+  senses: process(clk, reset)
+  variable pressedSenseUp : std_logic;
+  variable pressedSenseDown : std_logic;
   begin
-    if falling_edge(SenseUp) then
-      if sense = 5 then
-        
-      else
-        sense <= sense + 1;
-      end if;
-    elsif falling_edge(SenseDown) then
-      if sense = 1 then
-        
-      else
-        sense <= sense - 1;
-      end if;
-    end if;
-  end process;
+    if reset = '0' then
+      sense <= 0;
+	 elsif rising_edge(clk) then
+		if SenseUp = '0' and pressedSenseUp = '0' then
+		  if sense < 5 then
+          sense <= sense + 1;
+        end if;
+		  pressedSenseUp := '1';
+		end if;
+		if SenseUp = '1' then
+			pressedSenseUp := '0';
+		end if;
+		
+      if SenseDown = '0' and pressedSenseDown = '0' then
+		  if sense < 5 then
+          sense <= sense - 1;
+        end if;
+		  pressedSenseDown := '1';
+		end if;
+		if SenseDown = '1' then
+			pressedSenseDown := '0';
+		end if;
+		
+	 end if;
+  end process senses;
+    
+--  senses: process(SenseUp, SenseDown)
+--  begin
+--    if falling_edge(SenseUp) then
+--      if sense = 5 then
+--        
+--      else
+--        sense <= sense + 1;
+--      end if;
+--	 end if;
+--    if falling_edge(SenseDown) then
+--      if sense = 1 then
+--        
+--      else
+--        sense <= sense - 1;
+--      end if;
+--    end if;
+--  end process;
 end controlDirection;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SurroundSound
-Sat Jun 01 08:53:53 2019
+Mon Jun 17 12:53:46 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 
 
@@ -14,9 +14,11 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "FilterMemory:FMem"
+ 10. Port Connectivity Checks: "ButtonController:BC"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -42,14 +44,14 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Jun 01 08:53:53 2019           ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 17 12:53:46 2019           ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Standard Edition ;
 ; Revision Name                   ; SurroundSound                                   ;
 ; Top-level Entity Name           ; SurroundSound                                   ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
 ; Total registers                 ; 0                                               ;
-; Total pins                      ; 1                                               ;
+; Total pins                      ; 30                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -67,7 +69,7 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
 ; Top-level entity name                                                           ; SurroundSound      ; SurroundSound      ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -154,8 +156,8 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -165,40 +167,43 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                       ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
-; SurroundSound.vhd                ; yes             ; User VHDL File  ; D:/DSPC git/SurroundSound/SurroundSound.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
+; SurroundSound.vhd                ; yes             ; User VHDL File  ; C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd    ;         ;
+; FilterTypes.vhd                  ; yes             ; User VHDL File  ; C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterTypes.vhd      ;         ;
+; ButtonController.vhd             ; yes             ; User VHDL File  ; C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd ;         ;
+; FilterMemory.vhd                 ; yes             ; User VHDL File  ; C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterMemory.vhd     ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimate of Logic utilization (ALMs needed) ; 0     ;
-;                                             ;       ;
-; Combinational ALUT usage for logic          ; 0     ;
-;     -- 7 input functions                    ; 0     ;
-;     -- 6 input functions                    ; 0     ;
-;     -- 5 input functions                    ; 0     ;
-;     -- 4 input functions                    ; 0     ;
-;     -- <=3 input functions                  ; 0     ;
-;                                             ;       ;
-; Dedicated logic registers                   ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 1     ;
-;                                             ;       ;
-; Total DSP Blocks                            ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; test  ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 1     ;
-; Average fan-out                             ; 0.50  ;
-+---------------------------------------------+-------+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 0                  ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 0                  ;
+;     -- 7 input functions                    ; 0                  ;
+;     -- 6 input functions                    ; 0                  ;
+;     -- 5 input functions                    ; 0                  ;
+;     -- 4 input functions                    ; 0                  ;
+;     -- <=3 input functions                  ; 0                  ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 30                 ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; AUD_ADCLRCK~output ;
+; Maximum fan-out                             ; 1                  ;
+; Total fan-out                               ; 33                 ;
+; Average fan-out                             ; 0.52               ;
++---------------------------------------------+--------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,7 +211,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
-; |SurroundSound             ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 1    ; 0            ; |SurroundSound      ; SurroundSound ; work         ;
+; |SurroundSound             ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 30   ; 0            ; |SurroundSound      ; SurroundSound ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -226,16 +231,39 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "FilterMemory:FMem"                                                                         ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; mem_filters ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ButtonController:BC"                                                                     ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; reset     ; Input  ; Info     ; Stuck at GND                                                                        ;
+; direction ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-------------------+---------------------------------+
-; Type              ; Count                           ;
-+-------------------+---------------------------------+
-; boundary_port     ; 1                               ;
-;                   ;                                 ;
-; Max LUT depth     ; 0.00                            ;
-; Average LUT depth ; 0.00                            ;
-+-------------------+---------------------------------+
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_io_obuf        ; 3                           ;
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 30                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
 
 
 +-------------------------------+
@@ -243,7 +271,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -253,48 +281,126 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Standard Edition
-    Info: Processing started: Sat Jun 01 08:53:43 2019
+    Info: Processing started: Mon Jun 17 12:51:41 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SurroundSound -c SurroundSound
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file surroundsound.vhd
-    Info (12022): Found design unit 1: SurroundSound-default File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 9
-    Info (12023): Found entity 1: SurroundSound File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 5
+    Info (12022): Found design unit 1: SurroundSound-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 23
+    Info (12023): Found entity 1: SurroundSound File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 7
 Info (12021): Found 1 design units, including 0 entities, in source file filtertypes.vhd
-    Info (12022): Found design unit 1: FilterTypes File: D:/DSPC git/SurroundSound/FilterTypes.vhd Line: 5
+    Info (12022): Found design unit 1: FilterTypes File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterTypes.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file filtermanager.vhd
-    Info (12022): Found design unit 1: FilterManager-filtering File: D:/DSPC git/SurroundSound/FilterManager.vhd Line: 19
-    Info (12023): Found entity 1: FilterManager File: D:/DSPC git/SurroundSound/FilterManager.vhd Line: 9
+    Info (12022): Found design unit 1: FilterManager-filtering File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterManager.vhd Line: 19
+    Info (12023): Found entity 1: FilterManager File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterManager.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file filterinterpolator.vhd
-    Info (12022): Found design unit 1: FilterInterpolator-default File: D:/DSPC git/SurroundSound/FilterInterpolator.vhd Line: 16
-    Info (12023): Found entity 1: FilterInterpolator File: D:/DSPC git/SurroundSound/FilterInterpolator.vhd Line: 7
+    Info (12022): Found design unit 1: FilterInterpolator-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterInterpolator.vhd Line: 16
+    Info (12023): Found entity 1: FilterInterpolator File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterInterpolator.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file buttoncontroller.vhd
-    Info (12022): Found design unit 1: ButtonController-controlDirection File: D:/DSPC git/SurroundSound/ButtonController.vhd Line: 15
-    Info (12023): Found entity 1: ButtonController File: D:/DSPC git/SurroundSound/ButtonController.vhd Line: 5
+    Info (12022): Found design unit 1: ButtonController-controlDirection File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 15
+    Info (12023): Found entity 1: ButtonController File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file filterprocessor.vhd
-    Info (12022): Found design unit 1: FilterProcessor-default File: D:/DSPC git/SurroundSound/FilterProcessor.vhd Line: 15
-    Info (12023): Found entity 1: FilterProcessor File: D:/DSPC git/SurroundSound/FilterProcessor.vhd Line: 7
+    Info (12022): Found design unit 1: FilterProcessor-default File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterProcessor.vhd Line: 15
+    Info (12023): Found entity 1: FilterProcessor File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterProcessor.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file iis2bytestream.vhd
-    Info (12022): Found design unit 1: IIS2ByteStream-stream File: D:/DSPC git/SurroundSound/IIS2ByteStream.vhd Line: 19
-    Info (12023): Found entity 1: IIS2ByteStream File: D:/DSPC git/SurroundSound/IIS2ByteStream.vhd Line: 8
+    Info (12022): Found design unit 1: IIS2ByteStream-stream File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/IIS2ByteStream.vhd Line: 19
+    Info (12023): Found entity 1: IIS2ByteStream File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/IIS2ByteStream.vhd Line: 8
 Info (12021): Found 2 design units, including 1 entities, in source file bytestream2iis.vhd
-    Info (12022): Found design unit 1: ByteStream2IIS-stream File: D:/DSPC git/SurroundSound/ByteStream2IIS.vhd Line: 20
-    Info (12023): Found entity 1: ByteStream2IIS File: D:/DSPC git/SurroundSound/ByteStream2IIS.vhd Line: 7
+    Info (12022): Found design unit 1: ByteStream2IIS-stream File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ByteStream2IIS.vhd Line: 19
+    Info (12023): Found entity 1: ByteStream2IIS File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ByteStream2IIS.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file filtermemory.vhd
-    Info (12022): Found design unit 1: FilterMemory-memery File: D:/DSPC git/SurroundSound/FilterMemory.vhd Line: 11
-    Info (12023): Found entity 1: FilterMemory File: D:/DSPC git/SurroundSound/FilterMemory.vhd Line: 7
+    Info (12022): Found design unit 1: FilterMemory-memery File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterMemory.vhd Line: 11
+    Info (12023): Found entity 1: FilterMemory File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterMemory.vhd Line: 7
 Info (12127): Elaborating entity "SurroundSound" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at SurroundSound.vhd(12): used implicit default value for signal "AUD_DACDAT" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 12
+Warning (10541): VHDL Signal Declaration warning at SurroundSound.vhd(18): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+Warning (10540): VHDL Signal Declaration warning at SurroundSound.vhd(24): used explicit default value for signal "reset" because signal was never assigned a value File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 24
+Warning (10036): Verilog HDL or VHDL warning at SurroundSound.vhd(25): object "direction" assigned a value but never read File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 25
+Warning (10036): Verilog HDL or VHDL warning at SurroundSound.vhd(26): object "mem_filters" assigned a value but never read File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 26
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "mem_filters" into its bus
+Info (12128): Elaborating entity "ButtonController" for hierarchy "ButtonController:BC" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 28
+Warning (10492): VHDL Process Statement warning at ButtonController.vhd(25): signal "degrees" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 25
+Warning (10492): VHDL Process Statement warning at ButtonController.vhd(26): signal "sense" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 26
+Warning (10631): VHDL Process Statement warning at ButtonController.vhd(23): inferring latch(es) for signal or variable "step", which holds its previous value in one or more paths through the process File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[0]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[1]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[2]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[3]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[4]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[5]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[6]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[7]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[8]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[9]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[10]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[11]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[12]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[13]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[14]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[15]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[16]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[17]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[18]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[19]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[20]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[21]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[22]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[23]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[24]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[25]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[26]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[27]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[28]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[29]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[30]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (10041): Inferred latch for "step[31]" at ButtonController.vhd(23) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/ButtonController.vhd Line: 23
+Info (12128): Elaborating entity "FilterMemory" for hierarchy "FilterMemory:FMem" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 36
+Warning (10873): Using initial value X (don't care) for net "mem_filters[23..1]" at FilterMemory.vhd(8) File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/FilterMemory.vhd Line: 8
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "mem_filters" into its bus
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "mem_filters" into its bus
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 10
+    Warning (13040): bidirectional pin "AUD_BCLK" has no driver File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 11
+    Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 13
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "AUD_DACDAT" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 12
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 18
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "test" File: D:/DSPC git/SurroundSound/SurroundSound.vhd Line: 6
-Info (21057): Implemented 1 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 0 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 4884 megabytes
-    Info: Processing ended: Sat Jun 01 08:53:53 2019
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:20
+Warning (21074): Design contains 16 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "AUD_ADCDAT" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 9
+    Warning (15610): No output dependent on input pin "CLK_50" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 15
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 17
+    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 17
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Anders/Documents/DSPC/DSPCProjekt/SorroundSound/SurroundSound/SurroundSound.vhd Line: 19
+Info (21057): Implemented 30 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 16 input pins
+    Info (21059): Implemented 11 output pins
+    Info (21060): Implemented 3 bidirectional pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 5267 megabytes
+    Info: Processing ended: Mon Jun 17 12:53:46 2019
+    Info: Elapsed time: 00:02:05
+    Info: Total CPU time (on all processors): 00:02:17
 
 
