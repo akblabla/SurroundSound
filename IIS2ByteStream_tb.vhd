@@ -15,9 +15,7 @@ architecture tb of IIS2ByteStream_tb is
       byteStreamRight 	: out  signed32;
       bitclk     	: in  std_logic;
       adcdat     	: in  std_logic;
-      dacdat     	: out std_logic;
-      adclrck    	: in  std_logic;
-      daclrck    	: in  std_logic);
+      adclrck    	: in  std_logic);
 end component;
 
   signal reset_tb      		: std_logic := '0';
@@ -25,9 +23,7 @@ end component;
   signal byteStreamRight_tb 	: signed32 := to_signed(0,32);
   signal bitclk_tb     		: std_logic := '0';
   signal adcdat_tb     		: std_logic := '0';
-  signal dacdat_tb     		: std_logic := '0';
   signal adclrck_tb    		: std_logic := '0';
-  signal daclrck_tb    		: std_logic := '0';
 
   signal clock 		: std_logic := '1';
 
@@ -39,9 +35,7 @@ begin
       byteStreamRight 	=> byteStreamRight_tb,
       bitclk 		=> bitclk_tb,
       adcdat 		=> adcdat_tb,
-      dacdat            => dacdat_tb,
-      adclrck 		=> adclrck_tb,
-      daclrck           => daclrck_tb);
+      adclrck 		=> adclrck_tb);
 
   clock <= not clock after 10 ns;
   bitclk_tb <= clock;
@@ -58,13 +52,19 @@ begin
     wait for 40 ns;
     adcdat_tb <= '0';
     adclrck_tb <= not adclrck_tb;
+    wait for 25 ns;
+    adcdat_tb <= '0';
+    wait for 25 ns;
+    adcdat_tb <= '1';
     wait for 20 ns;
-    adclrck_tb <= not adclrck_tb;
-    wait for 20 ns;
+    adcdat_tb <= '0';
+    wait for 40 ns;
+    adcdat_tb <= '1';
+    adclrck_tb <= not adclrck_tb;    wait for 20 ns;
     assert byteStreamRight_tb = to_signed(13,32)
       report "Right stream wrong"
       severity warning;
-    assert byteStreamLeft_tb = to_signed(13,32)
+    assert byteStreamLeft_tb = to_signed(2,32)
       report "Left stream wrong stream wrong"
       severity warning;
     wait;
