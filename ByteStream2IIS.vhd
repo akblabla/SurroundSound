@@ -32,7 +32,7 @@ begin
       if daclrck = not daclrckPrev then
         if daclrck = '0' then
       	  dest_data_temp <= std_logic_vector(byteStreamLeft(31 downto 31-IISbitResolution+1));
-	else
+	  else
       	  dest_data_temp <= std_logic_vector(byteStreamRight(31 downto 31-IISbitResolution+1));	
  	end if;
         daclrckPrev := daclrck;
@@ -52,15 +52,15 @@ begin
     elsif rising_edge(bitclk) then
       if start = '1' then
         bitcount := 0;
-	starting <= '1';
+	    starting <= '1';
       elsif bitcount<IISbitResolution then
-	starting <= '0';
+	    starting <= '0';
         if daclrck = '0' then
-	  dacdat <= dest_data_temp(bitcount);
-	else
-	  dacdat <= dest_data_temp(bitcount);
-	end if;
-      bitcount := bitcount+1;
+	      dacdat <= dest_data_temp(bitcount);
+	    else
+	      dacdat <= dest_data_temp(bitcount);
+	    end if;
+        bitcount := bitcount+1;
       end if;
     end if;
   end process;
